@@ -1,0 +1,124 @@
+@tailwind base;
+@import "./fontFace.scss";
+@tailwind components;
+@tailwind utilities;
+
+$primary-color: #111b47;
+$secondary-color: #091133;
+$text-color: white;
+$pricingBgImageUrl : '/girlHoldingEmail.png';
+
+:root {
+  --primary: 9, 17, 51;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  width: fit-content;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(var(--primary));
+  background-color: rgb(var(--white));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(90deg, #25196b 0%, #94d9cd 100%);
+}
+
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 2px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $text-color;
+
+  &:hover {
+    border: 2px solid $secondary-color;
+    background-color: transparent;
+    color: $secondary-color;
+  }
+}
+
+.btn-outlined {
+  border: 2px solid $secondary-color;
+  background-color: transparent;
+  color: $secondary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $text-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
+
+.background-container {
+  background-image: url('/rectangle.png');
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.border-bottom{
+  border-bottom: 1px solid #5D6970;
+  opacity: 0.6;
+}
+
+.hamburger {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 2px 4px;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  margin-bottom: 5px;
+}
+
+.hamburger.is-active {
+  transform: rotate(45deg);
+}
+
+.hamburger.is-active span:first-child {
+  transform: translateX(20px) rotate(135deg);
+}
+
+.hamburger.is-active span:last-child {
+  transform: translateX(-20px) rotate(-45deg);
+}
